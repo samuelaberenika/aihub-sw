@@ -1,0 +1,11 @@
+# Dependency and build output - installed on the build server, never committed.
+node_modules/
+.next/
+out/
+next-env.d.ts
+
+# Local environment values and editor/OS noise.
+.env*
+.vercel
+.DS_Store
+*.tsbuildinfo
