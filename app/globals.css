@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Base typography and background for the whole app.
+ *
+ * The page background is the brand's soft pink rather than plain white, which is
+ * how the Hub's own designs look, and the text colour is the brand ink so contrast
+ * stays high against it.
+ */
+body {
+  background-color: #f7eef4;
+  color: #212120;
+}
+
+/* Keyboard users need to see where they are; the browser default is easy to miss. */
+:focus-visible {
+  outline: 3px solid #631549;
+  outline-offset: 2px;
+}
