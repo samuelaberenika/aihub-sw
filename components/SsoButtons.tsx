@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Notice from "./Notice";
+import { GoogleMark, LinkedInMark } from "./ProviderMark";
 
 /**
  * The two single sign-on buttons from the design.
@@ -11,13 +12,16 @@ import Notice from "./Notice";
  * scheduled for a later sprint. Until that is done these buttons explain
  * themselves when pressed. A button that silently does nothing reads as broken,
  * especially in front of the client.
+ *
+ * Each button carries the provider's own mark beside its label, which is what makes
+ * the choice readable at a glance on a phone.
  */
 export default function SsoButtons() {
   const [pressed, setPressed] = useState<string | null>(null);
 
   const providers = [
-    { id: "google", label: "Continue with Google", short: "Google" },
-    { id: "linkedin", label: "Continue with LinkedIn", short: "LinkedIn" },
+    { id: "google", label: "Continue with Google", short: "Google", mark: <GoogleMark className="h-5 w-5" /> },
+    { id: "linkedin", label: "Continue with LinkedIn", short: "LinkedIn", mark: <LinkedInMark className="h-5 w-5" /> },
   ];
 
   return (
@@ -27,8 +31,9 @@ export default function SsoButtons() {
           key={provider.id}
           type="button"
           onClick={() => setPressed(provider.short)}
-          className="flex w-full items-center justify-center gap-2 rounded-lg border-2 border-ink/20 bg-white px-4 py-3 font-medium text-ink hover:border-plum"
+          className="flex w-full items-center justify-center gap-2.5 rounded-lg border-2 border-ink/20 bg-white px-4 py-3 font-medium text-ink hover:border-plum"
         >
+          {provider.mark}
           {provider.label}
         </button>
       ))}
