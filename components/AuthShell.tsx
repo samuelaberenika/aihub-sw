@@ -29,9 +29,27 @@ export default function AuthShell({ children }: { children: React.ReactNode }) {
           priority
           unoptimized
         />
-        <span className="text-base font-semibold tracking-tight text-plum">
-          AI Hub South West
-        </span>
+        {/*
+         * The wordmark sits to the right of the mark, as it does on the brand
+         * sheet: the mark carries the identity, the wordmark names it. This is
+         * the client's own artwork, unaltered, so the header reads exactly as the
+         * logo does everywhere else.
+         *
+         * Unlike the mark this one is a raster file, so it is left to the image
+         * pipeline to serve a properly sized version rather than shipping the
+         * full-resolution original to a phone.
+         *
+         * Both images are decorative and carry no alt text: the link around them
+         * is already labelled "AI Hub South West home", so a screen reader hears
+         * the name once instead of three times.
+         */}
+        <Image
+          src="/aihub-sw-logo.png"
+          alt=""
+          width={162}
+          height={36}
+          priority
+        />
       </Link>
       {children}
     </main>
