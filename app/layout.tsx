@@ -17,6 +17,12 @@ export const metadata: Metadata = {
   title: "AI Hub South West",
   description:
     "Connecting people, ideas and opportunities in ethical AI across the South West.",
+  /*
+   * The browser tab and bookmark icon. Browsers ask for this separately from the
+   * page, so it is declared here and served straight from public/ — one file,
+   * the same brand mark the header uses.
+   */
+  icons: { icon: "/aihub-sw-icon.svg" },
 };
 
 /**
